@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Bee Marketing — Brand Style Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@media print {
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { page-break-after: always; box-shadow: none !important; margin: 0 !important; border-radius: 0 !important; }
+  .page:last-child { page-break-after: avoid; }
+  .no-print { display: none !important; }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f0ede6;
+  color: #1a1a1a;
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+
+.page {
+  width: 850px;
+  min-height: 1100px;
+  margin: 0 auto 40px;
+  background: #FFFDF5;
+  border-radius: 8px;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+/* === PAGE 1 === */
+.p1-header {
+  background: #1a1a1a;
+  padding: 50px 60px 45px;
+  position: relative;
+  overflow: hidden;
+}
+.p1-header::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,193,7,0.2) 0%, transparent 70%);
+}
+.p1-hex-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='white' stroke-width='1'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+}
+.p1-logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 6px;
+}
+.p1-logo span { color: #FFC107; }
+.p1-bee { font-size: 28px; margin-left: 6px; }
+.p1-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #FFC107;
+  position: relative;
+  z-index: 2;
+}
+.p1-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.p1-body { padding: 45px 60px; }
+
+/* Section headers */
+.guide-section {
+  margin-bottom: 40px;
+}
+.guide-section:last-child { margin-bottom: 0; }
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #FFC107;
+}
+.section-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFC107;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.section-header h2 {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #1a1a1a;
+}
+
+/* Color swatches */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.swatch {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(26,26,26,0.06);
+  background: #fff;
+}
+.swatch-color {
+  height: 65px;
+  position: relative;
+}
+.swatch-info {
+  padding: 10px 12px;
+}
+.swatch-name {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.swatch-hex {
+  font-size: 11px;
+  color: #888;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+.swatch-use {
+  font-size: 10px;
+  color: #aaa;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+/* Typography showcase */
+.type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.type-card {
+  background: #fff;
+  border: 1px solid rgba(26,26,26,0.06);
+  border-radius: 12px;
+  padding: 24px;
+}
+.type-sample {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(26,26,26,0.06);
+}
+.type-sample-poppins {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+.type-sample-playfair {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+.type-sample-inter {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.7;
+}
+.type-meta {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.6;
+}
+.type-meta strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+/* Logo section */
+.logo-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.logo-box {
+  border-radius: 14px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 140px;
+}
+.logo-box-light {
+  background: #fff;
+  border: 1px solid rgba(26,26,26,0.06);
+}
+.logo-box-dark {
+  background: #1a1a1a;
+}
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+}
+.logo-text-dark { color: #1a1a1a; }
+.logo-text-dark span { color: #FFC107; }
+.logo-text-light { color: #FFFDF5; }
+.logo-text-light span { color: #FFC107; }
+.logo-context {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.logo-context-dark { color: #aaa; }
+.logo-context-light { color: #666; }
+
+/* === PAGE 2 === */
+.p2-header {
+  background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+  padding: 40px 60px 35px;
+  position: relative;
+  overflow: hidden;
+}
+.p2-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%231a1a1a' stroke-width='1'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%231a1a1a' stroke-width='1'/%3E%3C/svg%3E");
+}
+.p2-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a1a1a;
+  position: relative;
+  z-index: 2;
+}
+.p2-sub {
+  font-size: 12px;
+  color: rgba(26,26,26,0.6);
+  font-weight: 500;
+  margin-top: 4px;
+  position: relative;
+  z-index: 2;
+}
+.p2-body { padding: 45px 60px; }
+
+/* Voice & Tone */
+.voice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.voice-card {
+  background: #fff;
+  border: 1px solid rgba(26,26,26,0.06);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.voice-emoji {
+  font-size: 24px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: #FFF3CD;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.voice-label {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.voice-desc {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Visual elements */
+.visual-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.visual-card {
+  background: #fff;
+  border: 1px solid rgba(26,26,26,0.06);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+.visual-demo {
+  height: 50px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.demo-btn {
+  background: linear-gradient(135deg, #FFC107, #FF8F00);
+  color: #1a1a1a;
+  padding: 10px 28px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+.demo-radius {
+  width: 60px;
+  height: 40px;
+  background: #FFF3CD;
+  border-radius: 12px;
+  border: 2px solid #FFC107;
+}
+.demo-shadow {
+  width: 70px;
+  height: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(255,193,7,0.25);
+}
+.visual-label {
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.visual-spec {
+  font-size: 10px;
+  color: #888;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* Social & handles */
+.social-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.social-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #FFC107, #FF8F00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.social-icon svg { width: 22px; height: 22px; fill: #1a1a1a; }
+.social-handle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+.social-platform {
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* DM Triggers */
+.dm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.dm-card {
+  background: #fff;
+  border: 1px solid rgba(26,26,26,0.06);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+.dm-keyword {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #FF8F00;
+  margin-bottom: 6px;
+}
+.dm-action {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Verticals */
+.vert-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.vert-card {
+  border-radius: 14px;
+  padding: 24px;
+}
+.vert-biz {
+  background: #1a1a1a;
+  color: #fff;
+}
+.vert-ent {
+  background: linear-gradient(135deg, #FFC107, #FF8F00);
+  color: #1a1a1a;
+}
+.vert-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.vert-list {
+  font-size: 12px;
+  line-height: 2;
+}
+.vert-biz .vert-list { color: #ccc; }
+.vert-ent .vert-list { color: rgba(26,26,26,0.7); }
+
+/* Footer */
+.guide-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #FFC107;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.guide-footer-logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+.guide-footer-logo span { color: #FFC107; }
+.guide-footer-text {
+  font-size: 10px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Print button */
+.print-bar {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.print-btn {
+  background: #1a1a1a;
+  color: #FFC107;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.print-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+</style>
+</head>
+<body>
+
+<!-- Print button -->
+<div class="print-bar no-print">
+  <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+</div>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <div class="p1-header">
+    <div class="p1-hex-pattern"></div>
+    <div class="p1-logo">Digital<span>Bee</span> <span class="p1-bee">&#x1F41D;</span></div>
+    <div class="p1-subtitle">Brand Style Guide</div>
+    <div class="p1-tagline">"We keep your business buzzin'"</div>
+  </div>
+
+  <div class="p1-body">
+    <!-- COLORS -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2>Color Palette</h2>
+      </div>
+      <div class="color-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #FFC107;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Honey Gold</div>
+            <div class="swatch-hex">#FFC107</div>
+            <div class="swatch-use">Primary — CTAs, headlines, logo</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #1A1A1A;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Black</div>
+            <div class="swatch-hex">#1A1A1A</div>
+            <div class="swatch-use">Text, dark sections, contrast</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #FF8F00;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Amber</div>
+            <div class="swatch-hex">#FF8F00</div>
+            <div class="swatch-use">Gradients, hover, emphasis</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #FFFDF5; border: 1px solid #eee;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Warm White</div>
+            <div class="swatch-hex">#FFFDF5</div>
+            <div class="swatch-use">Page backgrounds</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #FFF3CD;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Light Honey</div>
+            <div class="swatch-hex">#FFF3CD</div>
+            <div class="swatch-use">Card fills, subtle accents</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #555555;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Warm Gray</div>
+            <div class="swatch-hex">#555555</div>
+            <div class="swatch-use">Body text</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #888888;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Medium Gray</div>
+            <div class="swatch-hex">#888888</div>
+            <div class="swatch-use">Captions, labels</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: linear-gradient(135deg, #FFC107, #FF8F00);"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Honey Gradient</div>
+            <div class="swatch-hex">#FFC107 → #FF8F00</div>
+            <div class="swatch-use">Buttons, accent bars</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TYPOGRAPHY -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <h2>Typography</h2>
+      </div>
+      <div class="type-grid">
+        <div class="type-card">
+          <div class="type-sample">
+            <div class="type-sample-poppins">Poppins Bold</div>
+          </div>
+          <div class="type-meta">
+            <strong>Poppins</strong> — Google Fonts<br>
+            Weights: 600, 700, 800<br>
+            Use: Headlines, buttons, navigation<br>
+            Feeling: Modern, confident, clean
+          </div>
+        </div>
+        <div class="type-card">
+          <div class="type-sample">
+            <div class="type-sample-playfair">Playfair Display</div>
+          </div>
+          <div class="type-meta">
+            <strong>Playfair Display</strong> — Google Fonts<br>
+            Weights: 400, 600, 700 + Italic<br>
+            Use: Founder page, editorial, quotes<br>
+            Feeling: Elegant, personal, premium
+          </div>
+        </div>
+        <div class="type-card" style="grid-column: span 2;">
+          <div class="type-sample">
+            <div class="type-sample-inter">Inter is the body typeface. Clean, highly readable, and professional at every size. Used for paragraphs, form labels, descriptions, and UI elements.</div>
+          </div>
+          <div class="type-meta">
+            <strong>Inter</strong> — Google Fonts &nbsp;|&nbsp; Weights: 300, 400, 500, 600, 700 &nbsp;|&nbsp; Use: Body copy, forms, captions, meta text
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGO -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <h2>Logo Usage</h2>
+      </div>
+      <div class="logo-showcase">
+        <div class="logo-box logo-box-light">
+          <div class="logo-text logo-text-dark">Digital<span>Bee</span> &#x1F41D;</div>
+          <div class="logo-context logo-context-light">On light backgrounds</div>
+        </div>
+        <div class="logo-box logo-box-dark">
+          <div class="logo-text logo-text-light">Digital<span>Bee</span> &#x1F41D;</div>
+          <div class="logo-context logo-context-dark">On dark backgrounds</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <div class="p2-header">
+    <div class="p2-title">Voice, Visuals & Social &#x1F41D;</div>
+    <div class="p2-sub">Digital Bee Marketing — Brand Style Guide (continued)</div>
+  </div>
+
+  <div class="p2-body">
+    <!-- VOICE & TONE -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <h2>Voice & Tone</h2>
+      </div>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-emoji">&#x1F41D;</div>
+          <div>
+            <div class="voice-label">Fun & Warm</div>
+            <div class="voice-desc">Approachable energy. We're the friend who also happens to be great at marketing. Never stiff or corporate.</div>
+          </div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-emoji">&#128170;</div>
+          <div>
+            <div class="voice-label">Confident</div>
+            <div class="voice-desc">We know what we're doing and we say it directly. No hedging, no "maybe." Bold claims backed by results.</div>
+          </div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-emoji">&#127912;</div>
+          <div>
+            <div class="voice-label">Creative</div>
+            <div class="voice-desc">Bee and honey metaphors used naturally — "hive," "buzzin'," "sweet results." Never forced, always clever.</div>
+          </div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-emoji">&#129309;</div>
+          <div>
+            <div class="voice-label">Community-First</div>
+            <div class="voice-desc">We build with our clients, not just for them. Every post, ad, and strategy is a partnership.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISUAL ELEMENTS -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <h2>Visual Elements</h2>
+      </div>
+      <div class="visual-row">
+        <div class="visual-card">
+          <div class="visual-demo"><div class="demo-btn">Get Buzzin'</div></div>
+          <div class="visual-label">Buttons</div>
+          <div class="visual-spec">gradient, 50px radius</div>
+        </div>
+        <div class="visual-card">
+          <div class="visual-demo"><div class="demo-radius"></div></div>
+          <div class="visual-label">Card Radius</div>
+          <div class="visual-spec">12-20px rounded</div>
+        </div>
+        <div class="visual-card">
+          <div class="visual-demo"><div class="demo-shadow"></div></div>
+          <div class="visual-label">Shadows</div>
+          <div class="visual-spec">rgba(255,193,7,0.2)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOCIAL HANDLES -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-num">6</div>
+        <h2>Social Presence</h2>
+      </div>
+      <div class="social-row">
+        <div class="social-card">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </div>
+          <div>
+            <div class="social-handle">@digitalbee.support</div>
+            <div class="social-platform">Instagram — Business</div>
+          </div>
+        </div>
+        <div class="social-card">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </div>
+          <div>
+            <div class="social-handle">@braelabanks</div>
+            <div class="social-platform">Instagram — Founder</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DM TRIGGERS -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-num">7</div>
+        <h2>DM Call-to-Actions</h2>
+      </div>
+      <div class="dm-grid">
+        <div class="dm-card">
+          <div class="dm-keyword">"BUZZ"</div>
+          <div class="dm-action">General inquiry<br>Get started conversation</div>
+        </div>
+        <div class="dm-card">
+          <div class="dm-keyword">"SERVICES"</div>
+          <div class="dm-action">Custom package request<br>Service-specific interest</div>
+        </div>
+        <div class="dm-card">
+          <div class="dm-keyword">"GROW"</div>
+          <div class="dm-action">Free strategy call<br>High-intent lead</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VERTICALS -->
+    <div class="guide-section">
+      <div class="section-header">
+        <div class="section-num">8</div>
+        <h2>Target Verticals</h2>
+      </div>
+      <div class="vert-row">
+        <div class="vert-card vert-biz">
+          <div class="vert-title">&#128188; Business</div>
+          <div class="vert-list">
+            &#x2713; Restaurants & Food<br>
+            &#x2713; Retail & E-Commerce<br>
+            &#x2713; Startups & Tech<br>
+            &#x2713; Service Businesses<br>
+            &#x2713; Real Estate & Finance
+          </div>
+        </div>
+        <div class="vert-card vert-ent">
+          <div class="vert-title">&#127908; Entertainment</div>
+          <div class="vert-list">
+            &#x2713; Artists & Musicians<br>
+            &#x2713; Events & Promoters<br>
+            &#x2713; Talent & Influencers<br>
+            &#x2713; Film & Media<br>
+            &#x2713; Nightlife & Venues
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="guide-footer">
+      <div class="guide-footer-logo">Digital<span>Bee</span> &#x1F41D;</div>
+      <div class="guide-footer-text">Confidential &mdash; 2026</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
