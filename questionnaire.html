@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital B Marketing — Tell Us About Your Business</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0a0a0a;
+  --card: #141414;
+  --border: #222;
+  --text: #f0f0f0;
+  --muted: #888;
+  --pink: #FF2D7B;
+  --blue: #00D4FF;
+  --pink-glow: 0 0 30px rgba(255, 45, 123, 0.3);
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+
+.logo { font-size: 1.5rem; font-weight: 800; text-align: center; margin-bottom: 8px; letter-spacing: -0.02em; }
+.logo span { color: var(--pink); }
+
+.subtitle {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  margin-bottom: 48px;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--pink);
+}
+
+.section-desc {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.field { margin-bottom: 20px; }
+
+.field label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.field label .required { color: var(--pink); margin-left: 2px; }
+
+.field input, .field textarea, .field select {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.field input:focus, .field textarea:focus, .field select:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(255, 45, 123, 0.1);
+}
+
+.field textarea { min-height: 100px; resize: vertical; }
+
+.field select option { background: var(--bg); color: var(--text); }
+
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 600px) { .field-row { grid-template-columns: 1fr; } }
+
+.checkbox-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.checkbox-group label:hover { border-color: var(--pink); }
+.checkbox-group input:checked + span { color: var(--pink); }
+.checkbox-group input { display: none; }
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: var(--pink);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: var(--pink-glow);
+  letter-spacing: 0.02em;
+}
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(255, 45, 123, 0.5); }
+
+.privacy {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 16px;
+}
+
+.success-msg {
+  display: none;
+  text-align: center;
+  padding: 60px 24px;
+}
+.success-msg svg { margin-bottom: 16px; }
+.success-msg h2 { font-size: 1.5rem; margin-bottom: 8px; }
+.success-msg p { color: var(--muted); }
+
+.powered {
+  text-align: center;
+  font-size: 0.6875rem;
+  color: #444;
+  margin-top: 40px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo">Digital <span>B</span> Marketing</div>
+  <p class="subtitle">Help us understand your business so we can craft the perfect marketing strategy. Fill this out and we'll come back with a custom plan.</p>
+
+  <form id="questionnaireForm">
+
+    <!-- Section 1: Business Basics -->
+    <div class="form-section">
+      <div class="section-title">Your Business</div>
+      <div class="section-desc">Tell us the basics so we know who we're working with.</div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Your Full Name <span class="required">*</span></label>
+          <input type="text" name="owner_name" required placeholder="e.g. Sarah Johnson">
+        </div>
+        <div class="field">
+          <label>Business Name <span class="required">*</span></label>
+          <input type="text" name="business_name" required placeholder="e.g. Luxe Events ATL">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Email <span class="required">*</span></label>
+          <input type="email" name="email" required placeholder="you@yourbusiness.com">
+        </div>
+        <div class="field">
+          <label>Phone</label>
+          <input type="tel" name="phone" placeholder="(555) 123-4567">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Website (if you have one)</label>
+        <input type="url" name="website" placeholder="https://yourbusiness.com">
+      </div>
+
+      <div class="field">
+        <label>Industry / Niche <span class="required">*</span></label>
+        <select name="industry" required>
+          <option value="" disabled selected>Select your industry</option>
+          <option value="entertainment">Entertainment (Music, Events, Nightlife)</option>
+          <option value="artist">Artist / Creator / Influencer</option>
+          <option value="restaurant">Restaurant / Food & Beverage</option>
+          <option value="beauty">Beauty / Salon / Barbershop</option>
+          <option value="fitness">Fitness / Wellness / Health</option>
+          <option value="real_estate">Real Estate</option>
+          <option value="retail">Retail / E-Commerce</option>
+          <option value="professional">Professional Services (Law, Finance, Medical)</option>
+          <option value="tech">Tech / SaaS / App</option>
+          <option value="nonprofit">Nonprofit / Community</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Describe your business in 2-3 sentences <span class="required">*</span></label>
+        <textarea name="business_description" required placeholder="What do you do? Who do you serve? What makes you different?"></textarea>
+      </div>
+    </div>
+
+    <!-- Section 2: Current Marketing -->
+    <div class="form-section">
+      <div class="section-title">Your Current Marketing</div>
+      <div class="section-desc">Where are you now? No judgment — we just need the real picture.</div>
+
+      <div class="field">
+        <label>Which platforms are you currently active on?</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="platforms" value="instagram"><span>Instagram</span></label>
+          <label><input type="checkbox" name="platforms" value="tiktok"><span>TikTok</span></label>
+          <label><input type="checkbox" name="platforms" value="facebook"><span>Facebook</span></label>
+          <label><input type="checkbox" name="platforms" value="twitter"><span>X / Twitter</span></label>
+          <label><input type="checkbox" name="platforms" value="youtube"><span>YouTube</span></label>
+          <label><input type="checkbox" name="platforms" value="linkedin"><span>LinkedIn</span></label>
+          <label><input type="checkbox" name="platforms" value="none"><span>None yet</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>How often are you posting right now?</label>
+        <select name="posting_frequency">
+          <option value="" disabled selected>Select frequency</option>
+          <option value="daily">Daily</option>
+          <option value="few_per_week">A few times a week</option>
+          <option value="weekly">About once a week</option>
+          <option value="rarely">Rarely / when I remember</option>
+          <option value="never">Not posting at all</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Are you currently running any paid ads?</label>
+        <select name="paid_ads">
+          <option value="" disabled selected>Select</option>
+          <option value="yes_managed">Yes — I manage them myself</option>
+          <option value="yes_agency">Yes — someone else manages them</option>
+          <option value="tried">I've tried but stopped</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>What's your biggest marketing frustration right now?</label>
+        <textarea name="frustration" placeholder="Be honest — what's not working? What keeps you up at night about your marketing?"></textarea>
+      </div>
+    </div>
+
+    <!-- Section 3: Goals -->
+    <div class="form-section">
+      <div class="section-title">Your Goals</div>
+      <div class="section-desc">What does winning look like for you?</div>
+
+      <div class="field">
+        <label>What are your top marketing goals? (check all that apply)</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="goals" value="followers"><span>Grow followers</span></label>
+          <label><input type="checkbox" name="goals" value="leads"><span>Generate leads</span></label>
+          <label><input type="checkbox" name="goals" value="sales"><span>Increase sales</span></label>
+          <label><input type="checkbox" name="goals" value="brand"><span>Build brand awareness</span></label>
+          <label><input type="checkbox" name="goals" value="events"><span>Promote events</span></label>
+          <label><input type="checkbox" name="goals" value="content"><span>Better content</span></label>
+          <label><input type="checkbox" name="goals" value="website"><span>Website traffic</span></label>
+          <label><input type="checkbox" name="goals" value="reputation"><span>Online reputation</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>What's your monthly marketing budget?</label>
+        <select name="budget">
+          <option value="" disabled selected>Select range</option>
+          <option value="under_500">Under $500/mo</option>
+          <option value="500_1000">$500 — $1,000/mo</option>
+          <option value="1000_2500">$1,000 — $2,500/mo</option>
+          <option value="2500_5000">$2,500 — $5,000/mo</option>
+          <option value="5000_plus">$5,000+/mo</option>
+          <option value="unsure">Not sure yet</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>If you could wave a magic wand and fix ONE thing about your marketing, what would it be?</label>
+        <textarea name="magic_wand" placeholder="This is the most important question. Be specific."></textarea>
+      </div>
+    </div>
+
+    <!-- Section 4: Brand & Style -->
+    <div class="form-section">
+      <div class="section-title">Your Brand & Style</div>
+      <div class="section-desc">Help us match your vibe.</div>
+
+      <div class="field">
+        <label>How would you describe your brand's personality? (pick up to 3)</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="personality" value="bold"><span>Bold / Edgy</span></label>
+          <label><input type="checkbox" name="personality" value="luxury"><span>Luxury / Premium</span></label>
+          <label><input type="checkbox" name="personality" value="fun"><span>Fun / Playful</span></label>
+          <label><input type="checkbox" name="personality" value="professional"><span>Professional / Corporate</span></label>
+          <label><input type="checkbox" name="personality" value="creative"><span>Creative / Artistic</span></label>
+          <label><input type="checkbox" name="personality" value="community"><span>Community / Down to Earth</span></label>
+          <label><input type="checkbox" name="personality" value="disruptive"><span>Disruptive / Rebellious</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Do you have brand colors, a logo, and brand guidelines?</label>
+        <select name="brand_assets">
+          <option value="" disabled selected>Select</option>
+          <option value="full">Yes — full brand kit (logo, colors, fonts, guidelines)</option>
+          <option value="logo_only">I have a logo but nothing else</option>
+          <option value="nothing">No — I need help with all of it</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Name 2-3 brands or accounts whose marketing you admire</label>
+        <textarea name="brand_inspiration" placeholder="Could be competitors, big brands, or just accounts that look/feel how you want yours to look."></textarea>
+      </div>
+    </div>
+
+    <!-- Section 5: Final -->
+    <div class="form-section">
+      <div class="section-title">Almost Done</div>
+      <div class="section-desc">Last few questions and we'll get to work.</div>
+
+      <div class="field">
+        <label>How soon are you looking to get started?</label>
+        <select name="timeline">
+          <option value="" disabled selected>Select</option>
+          <option value="asap">ASAP — yesterday</option>
+          <option value="this_month">This month</option>
+          <option value="exploring">Just exploring right now</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Anything else you want us to know?</label>
+        <textarea name="anything_else" placeholder="Goals, concerns, ideas, vibes — whatever's on your mind."></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">SUBMIT — LET'S BUILD SOMETHING</button>
+    <p class="privacy">Your information is confidential and only used to build your marketing strategy.</p>
+  </form>
+
+  <div class="success-msg" id="successMsg">
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#FF2D7B" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <h2>We got it.</h2>
+    <p>Your responses have been submitted. We'll review everything and come back with a custom strategy. Expect to hear from us within 24 hours.</p>
+  </div>
+
+  <p class="powered">Powered by Digital <span style="color:var(--pink)">B</span> Marketing</p>
+</div>
+
+<script>
+document.getElementById('questionnaireForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = {};
+  const formData = new FormData(form);
+
+  // Collect all fields
+  for (const [key, value] of formData.entries()) {
+    if (data[key]) {
+      if (Array.isArray(data[key])) data[key].push(value);
+      else data[key] = [data[key], value];
+    } else {
+      data[key] = value;
+    }
+  }
+
+  // Collect checkboxes that return arrays
+  ['platforms', 'goals', 'personality'].forEach(name => {
+    const checked = [...form.querySelectorAll(`input[name="${name}"]:checked`)].map(cb => cb.value);
+    if (checked.length) data[name] = checked;
+  });
+
+  // Add metadata
+  data._submitted_at = new Date().toISOString();
+  data._user_agent = navigator.userAgent;
+
+  // Save to localStorage as backup
+  const submissions = JSON.parse(localStorage.getItem('digitalb_submissions') || '[]');
+  submissions.push(data);
+  localStorage.setItem('digitalb_submissions', JSON.stringify(submissions));
+
+  // Try to POST to webhook (if configured)
+  try {
+    const webhookUrl = form.dataset.webhook;
+    if (webhookUrl) {
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    }
+  } catch (err) {
+    console.log('Webhook not configured or failed — data saved locally');
+  }
+
+  // Also save as downloadable JSON file link
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `digitalb-questionnaire-${Date.now()}.json`;
+  a.click();
+
+  // Show success
+  form.style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+});
+
+// Limit checkbox groups to max selections
+document.querySelectorAll('input[name="personality"]').forEach(cb => {
+  cb.addEventListener('change', () => {
+    const checked = document.querySelectorAll('input[name="personality"]:checked');
+    if (checked.length > 3) cb.checked = false;
+  });
+});
+</script>
+</body>
+</html>

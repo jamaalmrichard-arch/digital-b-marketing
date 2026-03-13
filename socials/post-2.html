@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Digital B Marketing — Post 2: Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px;
+  height: 1080px;
+  font-family: 'Space Grotesk', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.orb1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,212,255,0.2) 0%, transparent 70%);
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(80px);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 70px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+}
+.logo span { color: #FF2D7B; font-size: 28px; }
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #00D4FF;
+  border: 1px solid rgba(0,212,255,0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+}
+
+h1 {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 50px;
+  text-align: center;
+}
+h1 .highlight {
+  color: #FF2D7B;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex: 1;
+}
+.service-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.3s;
+}
+.service-card:hover {
+  border-color: rgba(255,45,123,0.3);
+}
+.service-icon {
+  font-size: 36px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(255,45,123,0.1);
+}
+.service-card:nth-child(2) .service-icon { background: rgba(0,212,255,0.1); }
+.service-card:nth-child(3) .service-icon { background: rgba(255,200,0,0.1); }
+.service-card:nth-child(4) .service-icon { background: rgba(100,255,150,0.1); }
+
+.service-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+.service-desc {
+  font-size: 15px;
+  color: #888;
+  line-height: 1.5;
+}
+
+.bottom-cta {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.bottom-cta p {
+  font-size: 18px;
+  color: #999;
+}
+.bottom-cta strong {
+  color: #FF2D7B;
+  font-weight: 700;
+}
+</style>
+</head>
+<body>
+<div class="orb1"></div>
+
+<div class="content">
+  <div class="top-row">
+    <div class="logo">Digital<span>B</span></div>
+    <div class="label">What We Do</div>
+  </div>
+
+  <h1>We Handle the <span class="highlight">Digital.</span><br>You Handle the <span class="highlight">Business.</span></h1>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <div class="service-name">Social Media Management</div>
+      <div class="service-desc">Content creation, scheduling, and engagement that builds real audiences.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎯</div>
+      <div class="service-name">Paid Advertising</div>
+      <div class="service-desc">Meta, Google, TikTok ads that convert clicks into customers.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <div class="service-name">Brand Identity</div>
+      <div class="service-desc">Logos, visuals, and brand voice that make you unforgettable.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📰</div>
+      <div class="service-name">PR & Exposure</div>
+      <div class="service-desc">Press placements, influencer collabs, and media outreach.</div>
+    </div>
+  </div>
+
+  <div class="bottom-cta">
+    <p>DM us <strong>"SERVICES"</strong> for a custom package</p>
+  </div>
+</div>
+</body>
+</html>
