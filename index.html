@@ -3,55 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Digital B Marketing | Business & Entertainment Marketing Agency</title>
-<meta name="description" content="Digital B Marketing — Bold strategies for business growth and entertainment exposure. Social media, branding, paid ads, PR, and more.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Digital Bee Marketing | We Keep Your Business Buzzin'</title>
+<meta name="description" content="Digital Bee Marketing — Business and Entertainment marketing that keeps your brand buzzin'. Social media, branding, paid ads, PR, content creation, and web design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* === RESET & BASE === */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
   font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: #e0e0e0;
+  background: #FFFDF5;
+  color: #1a1a1a;
   line-height: 1.6;
   overflow-x: hidden;
 }
-h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
 
 /* === VARIABLES === */
 :root {
-  --accent: #FF2D7B;
-  --accent2: #00D4FF;
-  --bg: #0a0a0a;
-  --bg2: #111111;
-  --bg3: #1a1a1a;
-  --text: #e0e0e0;
-  --text-muted: #888;
-  --radius: 12px;
+  --honey: #FFC107;
+  --black: #1a1a1a;
+  --amber: #FF8F00;
+  --bg: #FFFDF5;
+  --light-honey: #FFF3CD;
+  --text: #1a1a1a;
+  --text-muted: #5a5a5a;
+  --radius: 16px;
   --transition: 0.3s ease;
 }
 
 /* === UTILITY === */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.accent { color: var(--accent); }
-.accent2 { color: var(--accent2); }
 .section-label {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: var(--accent);
+  color: var(--amber);
   margin-bottom: 12px;
+  display: inline-block;
 }
 .section-title {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 20px;
+  color: var(--black);
 }
 .section-sub {
   font-size: 1.1rem;
@@ -59,6 +61,8 @@ ul { list-style: none; }
   max-width: 600px;
   line-height: 1.7;
 }
+.honey { color: var(--honey); }
+.amber { color: var(--amber); }
 
 /* === SCROLL REVEAL === */
 .reveal {
@@ -71,6 +75,16 @@ ul { list-style: none; }
   transform: translateY(0);
 }
 
+/* === HONEYCOMB SVG PATTERN === */
+.honeycomb-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23FFC107' stroke-width='1'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23FFC107' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 56px 100px;
+  z-index: 0;
+}
+
 /* === HEADER === */
 .header {
   position: fixed;
@@ -78,14 +92,15 @@ ul { list-style: none; }
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 18px 0;
+  padding: 14px 0;
   transition: background var(--transition), box-shadow var(--transition);
+  background: rgba(255, 253, 245, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 .header.scrolled {
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 2px 40px rgba(0,0,0,0.5);
+  background: rgba(255, 253, 245, 0.96);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.08);
 }
 .header .container {
   display: flex;
@@ -93,15 +108,22 @@ ul { list-style: none; }
   justify-content: space-between;
 }
 .logo {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-.logo span { color: var(--accent); font-size: 1.7rem; }
+.logo .bee-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.logo .brand-bee { color: var(--honey); }
 .nav-links {
   display: flex;
-  gap: 36px;
+  gap: 32px;
   align-items: center;
 }
 .nav-links a {
@@ -118,23 +140,25 @@ ul { list-style: none; }
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--honey);
   transition: width var(--transition);
+  border-radius: 2px;
 }
-.nav-links a:hover { color: #fff; }
+.nav-links a:hover { color: var(--black); }
 .nav-links a:hover::after { width: 100%; }
 .nav-cta {
-  background: var(--accent) !important;
-  color: #fff !important;
+  background: var(--honey) !important;
+  color: var(--black) !important;
   padding: 10px 24px;
   border-radius: 50px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.85rem;
   transition: transform var(--transition), box-shadow var(--transition);
+  border: none;
 }
 .nav-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 45, 123, 0.4);
+  box-shadow: 0 8px 24px rgba(255, 193, 7, 0.35);
 }
 .nav-cta::after { display: none !important; }
 
@@ -153,7 +177,7 @@ ul { list-style: none; }
   display: block;
   width: 26px;
   height: 2.5px;
-  background: #fff;
+  background: var(--black);
   border-radius: 2px;
   transition: var(--transition);
 }
@@ -166,7 +190,7 @@ ul { list-style: none; }
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(10, 10, 10, 0.98);
+  background: rgba(255, 253, 245, 0.98);
   z-index: 999;
   flex-direction: column;
   align-items: center;
@@ -175,13 +199,13 @@ ul { list-style: none; }
 }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--black);
   transition: color var(--transition);
 }
-.mobile-menu a:hover { color: var(--accent); }
+.mobile-menu a:hover { color: var(--amber); }
 
 @media (max-width: 768px) {
   .nav-links { display: none; }
@@ -196,121 +220,82 @@ ul { list-style: none; }
   align-items: center;
   padding: 120px 0 80px;
   overflow: hidden;
+  background: linear-gradient(160deg, #FFFDF5 0%, #FFF8E1 40%, #FFF3CD 100%);
 }
-/* Particle/gradient animation background */
-.hero::before {
-  content: '';
+.hero .honeycomb-bg { opacity: 0.1; }
+.hero-glow {
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 600px 600px at 20% 50%, rgba(255, 45, 123, 0.12) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 500px at 80% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 400px at 60% 80%, rgba(255, 45, 123, 0.06) 0%, transparent 70%);
-  animation: heroGlow 8s ease-in-out infinite alternate;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,193,7,0.15) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
   z-index: 0;
 }
-@keyframes heroGlow {
-  0% {
-    background:
-      radial-gradient(ellipse 600px 600px at 20% 50%, rgba(255, 45, 123, 0.12) 0%, transparent 70%),
-      radial-gradient(ellipse 500px 500px at 80% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 70%),
-      radial-gradient(ellipse 400px 400px at 60% 80%, rgba(255, 45, 123, 0.06) 0%, transparent 70%);
-  }
-  50% {
-    background:
-      radial-gradient(ellipse 700px 700px at 40% 40%, rgba(255, 45, 123, 0.15) 0%, transparent 70%),
-      radial-gradient(ellipse 600px 600px at 70% 60%, rgba(0, 212, 255, 0.12) 0%, transparent 70%),
-      radial-gradient(ellipse 300px 300px at 20% 70%, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
-  }
-  100% {
-    background:
-      radial-gradient(ellipse 500px 500px at 60% 60%, rgba(255, 45, 123, 0.1) 0%, transparent 70%),
-      radial-gradient(ellipse 700px 700px at 30% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 70%),
-      radial-gradient(ellipse 500px 500px at 80% 80%, rgba(255, 45, 123, 0.08) 0%, transparent 70%);
-  }
-}
-/* Floating particles */
-.hero::after {
-  content: '';
+.hero-glow-2 {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-image:
-    radial-gradient(2px 2px at 10% 20%, rgba(255,45,123,0.3), transparent),
-    radial-gradient(2px 2px at 25% 60%, rgba(0,212,255,0.25), transparent),
-    radial-gradient(1.5px 1.5px at 45% 15%, rgba(255,255,255,0.15), transparent),
-    radial-gradient(2px 2px at 55% 75%, rgba(255,45,123,0.2), transparent),
-    radial-gradient(1.5px 1.5px at 70% 40%, rgba(0,212,255,0.2), transparent),
-    radial-gradient(2px 2px at 85% 10%, rgba(255,255,255,0.1), transparent),
-    radial-gradient(1.5px 1.5px at 90% 80%, rgba(255,45,123,0.25), transparent),
-    radial-gradient(2px 2px at 15% 85%, rgba(0,212,255,0.15), transparent),
-    radial-gradient(1px 1px at 35% 45%, rgba(255,255,255,0.2), transparent),
-    radial-gradient(2px 2px at 65% 55%, rgba(255,45,123,0.15), transparent);
-  animation: particleFloat 20s linear infinite;
-  z-index: 0;
-}
-@keyframes particleFloat {
-  0% { transform: translateY(0) translateX(0); }
-  25% { transform: translateY(-20px) translateX(10px); }
-  50% { transform: translateY(-10px) translateX(-5px); }
-  75% { transform: translateY(-30px) translateX(15px); }
-  100% { transform: translateY(0) translateX(0); }
-}
-/* Grid overlay */
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,143,0,0.1) 0%, transparent 70%);
+  bottom: -50px;
+  left: -50px;
   z-index: 0;
 }
 .hero .container { position: relative; z-index: 1; }
-.hero-content { max-width: 800px; }
-.hero-label {
-  display: inline-block;
-  font-size: 0.8rem;
+.hero-content {
+  max-width: 720px;
+  text-align: center;
+  margin: 0 auto;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent2);
+  color: var(--amber);
   margin-bottom: 24px;
   padding: 8px 20px;
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(255, 193, 7, 0.12);
+  border: 1px solid rgba(255, 193, 7, 0.25);
   border-radius: 50px;
 }
 .hero h1 {
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
   font-weight: 900;
-  line-height: 1.05;
-  margin-bottom: 28px;
-  letter-spacing: -2px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: var(--black);
 }
-.hero h1 .line2 {
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--honey), var(--amber));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.hero p {
+.hero p.hero-sub {
   font-size: 1.2rem;
   color: var(--text-muted);
   max-width: 560px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
   line-height: 1.8;
 }
-.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 16px 36px;
-  background: var(--accent);
-  color: #fff;
-  font-family: 'Space Grotesk', sans-serif;
+  background: var(--honey);
+  color: var(--black);
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   border-radius: 50px;
@@ -320,7 +305,7 @@ ul { list-style: none; }
 }
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(255, 45, 123, 0.4);
+  box-shadow: 0 12px 36px rgba(255, 193, 7, 0.4);
 }
 .btn-outline {
   display: inline-flex;
@@ -328,146 +313,120 @@ ul { list-style: none; }
   gap: 8px;
   padding: 16px 36px;
   background: transparent;
-  color: #fff;
-  font-family: 'Space Grotesk', sans-serif;
+  color: var(--black);
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   border-radius: 50px;
-  border: 1.5px solid rgba(255,255,255,0.2);
+  border: 2px solid var(--black);
   cursor: pointer;
-  transition: border-color var(--transition), transform var(--transition);
+  transition: border-color var(--transition), transform var(--transition), background var(--transition);
 }
 .btn-outline:hover {
-  border-color: var(--accent2);
+  border-color: var(--honey);
+  background: rgba(255, 193, 7, 0.08);
   transform: translateY(-2px);
 }
-.hero-stats {
-  display: flex;
-  gap: 48px;
-  margin-top: 64px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+
+/* Floating bees in hero */
+.floating-bee {
+  position: absolute;
+  font-size: 2rem;
+  z-index: 0;
+  opacity: 0.15;
+  animation: floatBee 6s ease-in-out infinite;
 }
-.hero-stat h3 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #fff, var(--accent2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-stat p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin: 0;
+.floating-bee:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; font-size: 1.8rem; }
+.floating-bee:nth-child(2) { top: 25%; right: 12%; animation-delay: 1.5s; font-size: 2.2rem; }
+.floating-bee:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 3s; font-size: 1.5rem; }
+.floating-bee:nth-child(4) { bottom: 30%; right: 8%; animation-delay: 4.5s; font-size: 1.6rem; }
+@keyframes floatBee {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(5deg); }
+  50% { transform: translateY(-8px) rotate(-3deg); }
+  75% { transform: translateY(-20px) rotate(4deg); }
 }
 
 /* === SERVICES === */
 .services {
-  padding: 120px 0;
-  background: var(--bg2);
+  padding: 100px 0 120px;
+  background: #fff;
   position: relative;
 }
-.services::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,45,123,0.3), transparent);
-}
-.services-header { text-align: center; margin-bottom: 72px; }
+.services-header { text-align: center; margin-bottom: 64px; }
 .services-header .section-sub { margin: 0 auto; }
 .services-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
-.service-col {
-  background: var(--bg3);
+.service-card {
+  background: var(--bg);
   border-radius: var(--radius);
-  padding: 48px;
-  border: 1px solid rgba(255,255,255,0.04);
-  transition: border-color var(--transition), transform var(--transition);
+  padding: 40px 32px;
+  border: 1px solid rgba(255, 193, 7, 0.15);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
-.service-col::before {
+.service-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--honey), var(--amber));
+  transform: scaleX(0);
+  transition: transform var(--transition);
+  transform-origin: left;
 }
-.service-col.business::before {
-  background: linear-gradient(90deg, var(--accent), transparent);
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover {
+  border-color: rgba(255, 193, 7, 0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(255, 193, 7, 0.12);
 }
-.service-col.entertainment::before {
-  background: linear-gradient(90deg, var(--accent2), transparent);
-}
-.service-col:hover {
-  border-color: rgba(255,255,255,0.08);
-  transform: translateY(-4px);
-}
-.service-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
+.service-icon-wrap {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 24px;
+  background: var(--light-honey);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
-  margin-bottom: 24px;
+  font-size: 2rem;
+  transition: transform var(--transition);
 }
-.business .service-icon { background: rgba(255, 45, 123, 0.1); }
-.entertainment .service-icon { background: rgba(0, 212, 255, 0.1); }
-.service-col h3 {
-  font-size: 1.5rem;
+.service-card:hover .service-icon-wrap { transform: scale(1.08) rotate(3deg); }
+.service-card h3 {
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #fff;
+  color: var(--black);
 }
-.service-col > p {
+.service-card p {
+  font-size: 0.92rem;
   color: var(--text-muted);
-  margin-bottom: 28px;
-  font-size: 0.95rem;
+  line-height: 1.7;
 }
-.service-list { display: flex; flex-direction: column; gap: 16px; }
-.service-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 14px 18px;
-  background: rgba(255,255,255,0.02);
-  border-radius: 10px;
-  transition: background var(--transition);
-}
-.service-item:hover { background: rgba(255,255,255,0.05); }
-.service-item .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 7px;
-}
-.business .service-item .dot { background: var(--accent); }
-.entertainment .service-item .dot { background: var(--accent2); }
-.service-item div { flex: 1; }
-.service-item h4 { font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 2px; }
-.service-item p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
   .services-grid { grid-template-columns: 1fr; }
 }
 
-/* === WHY SECTION === */
+/* === WHY CHOOSE US === */
 .why {
-  padding: 120px 0;
+  padding: 100px 0 120px;
   position: relative;
+  background: linear-gradient(180deg, #FFF8E1 0%, var(--bg) 100%);
 }
-.why-header { text-align: center; margin-bottom: 72px; }
+.why-header { text-align: center; margin-bottom: 64px; }
 .why-header .section-sub { margin: 0 auto; }
 .why-grid {
   display: grid;
@@ -476,33 +435,33 @@ ul { list-style: none; }
 }
 .why-card {
   text-align: center;
-  padding: 48px 28px;
-  background: var(--bg2);
+  padding: 44px 24px;
+  background: #fff;
   border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,0.04);
-  transition: border-color var(--transition), transform var(--transition);
-  position: relative;
+  border: 1px solid rgba(255, 193, 7, 0.12);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 .why-card:hover {
-  border-color: rgba(255, 45, 123, 0.2);
+  border-color: rgba(255, 193, 7, 0.35);
   transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(255, 193, 7, 0.1);
 }
-.why-card .num {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 3rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 20px;
-  line-height: 1;
+.why-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: var(--light-honey);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
 }
 .why-card h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 12px;
+  color: var(--black);
+  margin-bottom: 10px;
 }
 .why-card p {
   font-size: 0.9rem;
@@ -516,114 +475,129 @@ ul { list-style: none; }
   .why-grid { grid-template-columns: 1fr; }
 }
 
-/* === PORTFOLIO === */
-.portfolio {
-  padding: 120px 0;
-  background: var(--bg2);
+/* === INDUSTRIES === */
+.industries {
+  padding: 100px 0 120px;
+  background: #fff;
   position: relative;
 }
-.portfolio::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0,212,255,0.3), transparent);
-}
-.portfolio-header { text-align: center; margin-bottom: 72px; }
-.portfolio-header .section-sub { margin: 0 auto; }
-.portfolio-grid {
+.industries-header { text-align: center; margin-bottom: 64px; }
+.industries-header .section-sub { margin: 0 auto; }
+.industries-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
 }
-.portfolio-card {
-  position: relative;
+.industry-card {
   border-radius: var(--radius);
+  padding: 56px 48px;
+  position: relative;
   overflow: hidden;
-  aspect-ratio: 4/3;
-  cursor: pointer;
-  transition: transform var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
-.portfolio-card:hover { transform: translateY(-6px); }
-.portfolio-card .card-bg {
+.industry-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.1);
+}
+.industry-card.business-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #fff;
+}
+.industry-card.entertainment-card {
+  background: linear-gradient(135deg, var(--honey) 0%, var(--amber) 100%);
+  color: var(--black);
+}
+.industry-card .honeycomb-overlay {
   position: absolute;
   inset: 0;
-  transition: transform 0.6s ease;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 56px 100px;
 }
-.portfolio-card:hover .card-bg { transform: scale(1.05); }
-.portfolio-card:nth-child(1) .card-bg { background: linear-gradient(135deg, #1a0a2e, #3d1259, var(--accent)); }
-.portfolio-card:nth-child(2) .card-bg { background: linear-gradient(135deg, #0a1628, #0d3b66, var(--accent2)); }
-.portfolio-card:nth-child(3) .card-bg { background: linear-gradient(135deg, #1a0a0a, #5c1a1a, #ff4444); }
-.portfolio-card:nth-child(4) .card-bg { background: linear-gradient(135deg, #0a1a0a, #1a5c2e, #00cc66); }
-.portfolio-card:nth-child(5) .card-bg { background: linear-gradient(135deg, #1a1a0a, #5c4a1a, #ffaa00); }
-.portfolio-card:nth-child(6) .card-bg { background: linear-gradient(135deg, #0a0a1a, #2e1a5c, #8844ff); }
-.card-content {
-  position: absolute;
-  inset: 0;
+.industry-emoji {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+.industry-card h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.industry-card > p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  opacity: 0.85;
+}
+.industry-list {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 32px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-  z-index: 1;
+  gap: 10px;
 }
-.card-tag {
-  display: inline-block;
+.industry-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.industry-list li .check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 5px 12px;
-  border-radius: 50px;
-  margin-bottom: 12px;
-  width: fit-content;
+  flex-shrink: 0;
 }
-.card-tag.biz { background: rgba(255, 45, 123, 0.2); color: var(--accent); }
-.card-tag.ent { background: rgba(0, 212, 255, 0.2); color: var(--accent2); }
-.card-content h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
-.card-content p { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+.business-card .check {
+  background: rgba(255, 193, 7, 0.2);
+  color: var(--honey);
+}
+.entertainment-card .check {
+  background: rgba(26, 26, 26, 0.15);
+  color: var(--black);
+}
 
 @media (max-width: 768px) {
-  .portfolio-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 500px) {
-  .portfolio-grid { grid-template-columns: 1fr; }
+  .industries-grid { grid-template-columns: 1fr; }
+  .industry-card { padding: 40px 32px; }
 }
 
 /* === TESTIMONIALS === */
 .testimonials {
-  padding: 120px 0;
+  padding: 100px 0 120px;
+  background: linear-gradient(180deg, var(--bg) 0%, #FFF8E1 100%);
 }
-.testimonials-header { text-align: center; margin-bottom: 72px; }
+.testimonials-header { text-align: center; margin-bottom: 64px; }
 .testimonials-header .section-sub { margin: 0 auto; }
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 .testimonial-card {
-  background: var(--bg2);
+  background: #fff;
   border-radius: var(--radius);
   padding: 40px;
-  border: 1px solid rgba(255,255,255,0.04);
-  transition: border-color var(--transition), transform var(--transition);
-  position: relative;
+  border: 1px solid rgba(255, 193, 7, 0.12);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 .testimonial-card:hover {
-  border-color: rgba(255, 45, 123, 0.15);
+  border-color: rgba(255, 193, 7, 0.3);
   transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(255, 193, 7, 0.1);
 }
-.testimonial-card .quote-mark {
-  font-size: 4rem;
-  line-height: 1;
-  font-family: Georgia, serif;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.testimonial-card .stars {
+  display: flex;
+  gap: 3px;
   margin-bottom: 16px;
+}
+.testimonial-card .stars span {
+  color: var(--honey);
+  font-size: 1rem;
 }
 .testimonial-card p.quote {
   font-size: 1rem;
@@ -645,24 +619,15 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 1rem;
-  color: #fff;
-}
-.testimonial-card:nth-child(1) .author-avatar { background: linear-gradient(135deg, var(--accent), #ff6b9d); }
-.testimonial-card:nth-child(2) .author-avatar { background: linear-gradient(135deg, var(--accent2), #66e0ff); }
-.testimonial-card:nth-child(3) .author-avatar { background: linear-gradient(135deg, #8844ff, #aa66ff); }
-.author-info h4 { font-size: 0.95rem; font-weight: 600; color: #fff; }
-.author-info p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
-
-.stars {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 16px;
-}
-.stars span {
-  color: #FFD700;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
+  color: var(--black);
 }
+.testimonial-card:nth-child(1) .author-avatar { background: linear-gradient(135deg, var(--honey), #FFD54F); }
+.testimonial-card:nth-child(2) .author-avatar { background: linear-gradient(135deg, var(--amber), #FFAB40); }
+.testimonial-card:nth-child(3) .author-avatar { background: linear-gradient(135deg, #FFD54F, var(--honey)); }
+.author-info h4 { font-size: 0.95rem; font-weight: 600; color: var(--black); }
+.author-info p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
 
 @media (max-width: 768px) {
   .testimonials-grid { grid-template-columns: 1fr; }
@@ -670,33 +635,37 @@ ul { list-style: none; }
 
 /* === CTA SECTION === */
 .cta-section {
-  padding: 120px 0;
-  background: var(--bg2);
+  padding: 100px 0 120px;
+  background: var(--black);
   position: relative;
   overflow: hidden;
 }
-.cta-section::before {
-  content: '';
+.cta-section .honeycomb-bg { opacity: 0.04; }
+.cta-glow {
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 600px 400px at 50% 50%, rgba(255, 45, 123, 0.08) 0%, transparent 70%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,193,7,0.12) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .cta-inner {
   position: relative;
   text-align: center;
-  max-width: 700px;
+  max-width: 660px;
   margin: 0 auto;
   z-index: 1;
 }
 .cta-inner .section-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 20px;
   color: #fff;
 }
 .cta-inner p {
   font-size: 1.15rem;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.65);
   margin-bottom: 40px;
   line-height: 1.8;
 }
@@ -704,11 +673,18 @@ ul { list-style: none; }
   padding: 18px 48px;
   font-size: 1.1rem;
 }
+.cta-bee {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 24px;
+}
 
 /* === FOOTER === */
 .footer {
   padding: 60px 0 32px;
-  border-top: 1px solid rgba(255,255,255,0.04);
+  background: var(--black);
+  color: rgba(255,255,255,0.7);
+  border-top: 3px solid var(--honey);
 }
 .footer-top {
   display: flex;
@@ -721,9 +697,10 @@ ul { list-style: none; }
 .footer-brand .logo {
   font-size: 1.3rem;
   margin-bottom: 12px;
+  color: #fff;
 }
 .footer-brand p {
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.5);
   font-size: 0.9rem;
   max-width: 300px;
   line-height: 1.7;
@@ -738,45 +715,53 @@ ul { list-style: none; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--text-muted);
+  color: var(--honey);
   margin-bottom: 16px;
 }
 .footer-links-col a {
   display: block;
   font-size: 0.9rem;
-  color: var(--text);
+  color: rgba(255,255,255,0.6);
   padding: 4px 0;
   transition: color var(--transition);
 }
-.footer-links-col a:hover { color: var(--accent); }
+.footer-links-col a:hover { color: var(--honey); }
 .footer-socials {
   display: flex;
-  gap: 16px;
-  margin-bottom: 8px;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 .footer-socials a {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: var(--bg3);
+  background: rgba(255,255,255,0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background var(--transition), transform var(--transition);
   font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
 }
 .footer-socials a:hover {
-  background: var(--accent);
+  background: var(--honey);
+  color: var(--black);
   transform: translateY(-3px);
+}
+.footer-socials a svg { stroke: currentColor; }
+.footer-handle {
+  font-size: 0.9rem;
+  color: var(--honey);
+  font-weight: 600;
 }
 .footer-bottom {
   text-align: center;
   padding-top: 32px;
-  border-top: 1px solid rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 .footer-bottom p {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.4);
 }
 
 /* === FLOATING BUTTON === */
@@ -789,26 +774,26 @@ ul { list-style: none; }
   align-items: center;
   gap: 10px;
   padding: 14px 28px;
-  background: linear-gradient(135deg, var(--accent), #e0196a);
-  color: #fff;
-  font-family: 'Space Grotesk', sans-serif;
+  background: var(--honey);
+  color: var(--black);
+  font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 8px 32px rgba(255, 45, 123, 0.4);
+  box-shadow: 0 8px 28px rgba(255, 193, 7, 0.35);
   transition: transform var(--transition), box-shadow var(--transition);
   text-decoration: none;
 }
 .floating-cta:hover {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 12px 40px rgba(255, 45, 123, 0.5);
+  box-shadow: 0 12px 36px rgba(255, 193, 7, 0.45);
 }
 .floating-cta .pulse-dot {
   width: 8px;
   height: 8px;
-  background: #fff;
+  background: var(--black);
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
@@ -820,8 +805,17 @@ ul { list-style: none; }
 @media (max-width: 500px) {
   .floating-cta span.cta-text { display: none; }
   .floating-cta { padding: 16px; border-radius: 50%; }
-  .hero-stats { flex-direction: column; gap: 24px; }
 }
+
+/* === HEXAGON DECORATORS === */
+.hex-shape {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  opacity: 0.05;
+  z-index: 0;
+}
+.hex-shape svg { width: 100%; height: 100%; }
 </style>
 </head>
 <body>
@@ -829,13 +823,16 @@ ul { list-style: none; }
 <!-- HEADER -->
 <header class="header" id="header">
   <div class="container">
-    <a href="#" class="logo">Digital <span>B</span></a>
+    <a href="#" class="logo">
+      <span class="bee-icon">&#x1F41D;</span>
+      Digital <span class="brand-bee">Bee</span>
+    </a>
     <nav class="nav-links">
       <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="questionnaire.html" class="nav-cta">Get Started</a>
+      <a href="#why">Why Us</a>
+      <a href="#industries">Industries</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="questionnaire.html" class="nav-cta">Get Started &#x1F41D;</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -846,40 +843,32 @@ ul { list-style: none; }
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" onclick="closeMenu()">Services</a>
-  <a href="#work" onclick="closeMenu()">Work</a>
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
-  <a href="questionnaire.html" style="color: var(--accent);">Get Started</a>
+  <a href="#why" onclick="closeMenu()">Why Us</a>
+  <a href="#industries" onclick="closeMenu()">Industries</a>
+  <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+  <a href="questionnaire.html" style="color: var(--amber);">Get Started &#x1F41D;</a>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <div class="hero-grid"></div>
+  <div class="honeycomb-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <span class="floating-bee">&#x1F41D;</span>
+  <span class="floating-bee">&#x1F41D;</span>
+  <span class="floating-bee">&#x1F41D;</span>
+  <span class="floating-bee">&#x1F41D;</span>
   <div class="container">
     <div class="hero-content">
-      <span class="hero-label">Business + Entertainment Marketing</span>
+      <span class="hero-badge">&#x1F36F; Business + Entertainment Marketing</span>
       <h1>
-        We Don't Post Content.<br>
-        <span class="line2">We Build Movements.</span>
+        We Keep Your<br>
+        Business <span class="highlight">Buzzin'</span> &#x1F41D;
       </h1>
-      <p>Digital <span style="color: var(--accent); font-weight: 700;">B</span> is the marketing agency for brands that refuse to blend in. From boardrooms to backstages, we make noise that matters.</p>
+      <p class="hero-sub">Digital Bee is the marketing hive that turns your brand into the talk of the town. Strategy, content, and results that create a real buzz.</p>
       <div class="hero-buttons">
-        <a href="questionnaire.html" class="btn-primary">Start Your Project <span>&#8594;</span></a>
-        <a href="#work" class="btn-outline">See Our Work</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <h3>200+</h3>
-          <p>Campaigns Launched</p>
-        </div>
-        <div class="hero-stat">
-          <h3>50M+</h3>
-          <p>Impressions Generated</p>
-        </div>
-        <div class="hero-stat">
-          <h3>3.2x</h3>
-          <p>Avg. ROI for Clients</p>
-        </div>
+        <a href="questionnaire.html" class="btn-primary">Start Your Project &#8594;</a>
+        <a href="#services" class="btn-outline">Explore Services</a>
       </div>
     </div>
   </div>
@@ -890,236 +879,155 @@ ul { list-style: none; }
   <div class="container">
     <div class="services-header reveal">
       <p class="section-label">What We Do</p>
-      <h2 class="section-title">Two Worlds. <span class="accent">One Agency.</span></h2>
-      <p class="section-sub">Whether you're scaling a business or building a brand in entertainment, we bring the strategy, the content, and the results.</p>
+      <h2 class="section-title">Services That Create <span class="amber">a Buzz</span></h2>
+      <p class="section-sub">From your social feed to your bottom line, we handle every layer of your marketing so you can focus on what you do best.</p>
     </div>
     <div class="services-grid">
-      <!-- Business -->
-      <div class="service-col business reveal">
-        <div class="service-icon">&#9733;</div>
-        <h3>Business Marketing</h3>
-        <p>Growth-focused strategies for brands ready to dominate their market.</p>
-        <div class="service-list">
-          <div class="service-item">
-            <span class="dot"></span>
-            <div>
-              <h4>Brand Strategy & Positioning</h4>
-              <p>Define your market position and build a brand that commands attention.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <span class="dot"></span>
-            <div>
-              <h4>Social Media Management</h4>
-              <p>Platform-specific content calendars, daily management, community growth.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <span class="dot"></span>
-            <div>
-              <h4>Paid Advertising</h4>
-              <p>Meta, Google, TikTok ads engineered for conversions, not vanity metrics.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <span class="dot"></span>
-            <div>
-              <h4>Content Creation</h4>
-              <p>Scroll-stopping reels, carousels, and campaigns that convert.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <span class="dot"></span>
-            <div>
-              <h4>Email & Funnel Strategy</h4>
-              <p>Automated sequences that nurture leads and drive repeat revenue.</p>
-            </div>
-          </div>
-        </div>
+      <div class="service-card reveal">
+        <div class="service-icon-wrap">&#x1F4F1;</div>
+        <h3>Social Media Management</h3>
+        <p>We run your socials like a well-oiled hive. Daily content, community engagement, and growth strategies that keep your audience swarming back for more.</p>
       </div>
-      <!-- Entertainment -->
-      <div class="service-col entertainment reveal">
-        <div class="service-icon">&#9834;</div>
-        <h3>Entertainment Marketing</h3>
-        <p>Visibility, buzz, and sold-out moments for artists and creators.</p>
-        <div class="service-list">
-          <div class="service-item">
-            <span class="dot"></span>
-            <div>
-              <h4>Artist & Creator Branding</h4>
-              <p>Build an identity that fans connect with and the industry respects.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <span class="dot"></span>
-            <div>
-              <h4>Influencer Marketing</h4>
-              <p>Strategic placements with creators who move culture and drive action.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <span class="dot"></span>
-            <div>
-              <h4>Event Promotion</h4>
-              <p>From launch parties to tours — fill rooms and create moments.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <span class="dot"></span>
-            <div>
-              <h4>PR & Media Placement</h4>
-              <p>Get featured in the outlets, playlists, and platforms that matter.</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <span class="dot"></span>
-            <div>
-              <h4>Release & Launch Campaigns</h4>
-              <p>Coordinated rollouts across all platforms for maximum first-week impact.</p>
-            </div>
-          </div>
-        </div>
+      <div class="service-card reveal">
+        <div class="service-icon-wrap">&#x1F4E2;</div>
+        <h3>Paid Advertising</h3>
+        <p>Meta, Google, TikTok ads engineered for sweet ROI. We target the right audience and make every dollar of your ad spend work harder than a worker bee.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-wrap">&#x2B50;</div>
+        <h3>Brand Identity</h3>
+        <p>Your brand is your colony's DNA. We craft logos, color palettes, voice guides, and visual systems that make your brand instantly recognizable.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-wrap">&#x1F3AC;</div>
+        <h3>Content Creation</h3>
+        <p>Scroll-stopping reels, graphics, and campaigns that pollinate your audience's feed. We create the content that gets saved, shared, and talked about.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-wrap">&#x1F4F0;</div>
+        <h3>PR &amp; Exposure</h3>
+        <p>Get featured where it matters. From blogs and podcasts to press outlets and playlists, we put your brand in front of the people who move the needle.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-wrap">&#x1F4BB;</div>
+        <h3>Website Design</h3>
+        <p>Your website is your digital hive. We build beautiful, fast, mobile-first sites designed to convert visitors into loyal customers who keep coming back.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY DIGITAL B -->
-<section class="why" id="about">
+<!-- WHY CHOOSE US -->
+<section class="why" id="why">
   <div class="container">
     <div class="why-header reveal">
-      <p class="section-label">Why Digital B</p>
-      <h2 class="section-title">Built Different. <span class="accent">On Purpose.</span></h2>
-      <p class="section-sub">We're not a factory. Every campaign is custom. Every result is intentional.</p>
+      <p class="section-label">Why Choose Us</p>
+      <h2 class="section-title">The Hive <span class="amber">Advantage</span></h2>
+      <p class="section-sub">We are not another cookie-cutter agency. Here is what makes Digital Bee different.</p>
     </div>
     <div class="why-grid">
       <div class="why-card reveal">
-        <div class="num">01</div>
-        <h3>Results-Obsessed</h3>
-        <p>We don't celebrate likes. We celebrate revenue. Every campaign is tied to real business outcomes.</p>
+        <div class="why-icon">&#x1F3AF;</div>
+        <h3>Results-Driven</h3>
+        <p>Every campaign ties back to real numbers. We don't celebrate vanity metrics; we celebrate your revenue growth.</p>
       </div>
       <div class="why-card reveal">
-        <div class="num">02</div>
-        <h3>Creative-First</h3>
-        <p>Strategy without creativity is boring. We bring bold ideas that cut through the noise and stop the scroll.</p>
+        <div class="why-icon">&#x1F36F;</div>
+        <h3>Sweet Creativity</h3>
+        <p>Bold ideas that cut through the noise. We bring fresh concepts and scroll-stopping content that your audience actually cares about.</p>
       </div>
       <div class="why-card reveal">
-        <div class="num">03</div>
-        <h3>Data-Driven</h3>
-        <p>Every decision backed by analytics. We optimize in real-time so your budget works harder than the competition.</p>
+        <div class="why-icon">&#x1F4CA;</div>
+        <h3>Data-Backed</h3>
+        <p>Every decision is powered by analytics. We optimize in real-time so your budget works harder than the competition.</p>
       </div>
       <div class="why-card reveal">
-        <div class="num">04</div>
-        <h3>Culture-Connected</h3>
-        <p>We live in the spaces your audience lives. Business and entertainment aren't separate worlds to us.</p>
+        <div class="why-icon">&#x1F91D;</div>
+        <h3>Your Dedicated Hive</h3>
+        <p>No hand-offs. No runarounds. You get a team that knows your brand inside and out, responding faster than you can say "buzz."</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section class="portfolio" id="work">
+<!-- INDUSTRIES -->
+<section class="industries" id="industries">
   <div class="container">
-    <div class="portfolio-header reveal">
-      <p class="section-label">Our Work</p>
-      <h2 class="section-title">Campaigns That <span class="accent">Hit Different.</span></h2>
-      <p class="section-sub">A selection of projects across business and entertainment that delivered real impact.</p>
+    <div class="industries-header reveal">
+      <p class="section-label">Who We Serve</p>
+      <h2 class="section-title">Two Worlds. <span class="amber">One Hive.</span></h2>
+      <p class="section-sub">Whether you are scaling a business or building a name in entertainment, we bring the buzz you need.</p>
     </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-card reveal">
-        <div class="card-bg"></div>
-        <div class="card-content">
-          <span class="card-tag biz">Business</span>
-          <h3>Luxe Fitness Co. Launch</h3>
-          <p>Brand Identity & Social Strategy</p>
-        </div>
+    <div class="industries-grid">
+      <div class="industry-card business-card reveal">
+        <div class="honeycomb-overlay"></div>
+        <span class="industry-emoji">&#x1F4BC;</span>
+        <h3>Business Marketing</h3>
+        <p>Growth-focused strategies for brands, startups, and companies ready to dominate their market and generate consistent revenue.</p>
+        <ul class="industry-list">
+          <li><span class="check">&#10003;</span> Restaurants &amp; Hospitality</li>
+          <li><span class="check">&#10003;</span> Real Estate &amp; Professional Services</li>
+          <li><span class="check">&#10003;</span> E-Commerce &amp; Retail</li>
+          <li><span class="check">&#10003;</span> Health, Wellness &amp; Fitness</li>
+          <li><span class="check">&#10003;</span> Startups &amp; Tech</li>
+        </ul>
       </div>
-      <div class="portfolio-card reveal">
-        <div class="card-bg"></div>
-        <div class="card-content">
-          <span class="card-tag ent">Entertainment</span>
-          <h3>VIBE Festival 2026</h3>
-          <p>Event Promotion & PR</p>
-        </div>
-      </div>
-      <div class="portfolio-card reveal">
-        <div class="card-bg"></div>
-        <div class="card-content">
-          <span class="card-tag biz">Business</span>
-          <h3>NovaTech SaaS</h3>
-          <p>Paid Ads & Funnel Optimization</p>
-        </div>
-      </div>
-      <div class="portfolio-card reveal">
-        <div class="card-bg"></div>
-        <div class="card-content">
-          <span class="card-tag ent">Entertainment</span>
-          <h3>KAI - Album Rollout</h3>
-          <p>Release Campaign & Influencer Push</p>
-        </div>
-      </div>
-      <div class="portfolio-card reveal">
-        <div class="card-bg"></div>
-        <div class="card-content">
-          <span class="card-tag biz">Business</span>
-          <h3>Reign Realty Group</h3>
-          <p>Content Creation & Lead Gen</p>
-        </div>
-      </div>
-      <div class="portfolio-card reveal">
-        <div class="card-bg"></div>
-        <div class="card-content">
-          <span class="card-tag ent">Entertainment</span>
-          <h3>DJ Phantom Tour</h3>
-          <p>Social Blitz & Ticket Sales</p>
-        </div>
+      <div class="industry-card entertainment-card reveal">
+        <div class="honeycomb-overlay"></div>
+        <span class="industry-emoji">&#x1F3A4;</span>
+        <h3>Entertainment Marketing</h3>
+        <p>Visibility, buzz, and sold-out moments for artists, creators, and entertainment brands looking to make serious noise.</p>
+        <ul class="industry-list">
+          <li><span class="check">&#10003;</span> Musicians &amp; Recording Artists</li>
+          <li><span class="check">&#10003;</span> DJs &amp; Event Promoters</li>
+          <li><span class="check">&#10003;</span> Content Creators &amp; Influencers</li>
+          <li><span class="check">&#10003;</span> Podcasters &amp; Media Personalities</li>
+          <li><span class="check">&#10003;</span> Venues &amp; Nightlife</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials">
+<section class="testimonials" id="testimonials">
   <div class="container">
     <div class="testimonials-header reveal">
       <p class="section-label">Client Love</p>
-      <h2 class="section-title">Don't Take Our Word. <span class="accent">Take Theirs.</span></h2>
-      <p class="section-sub">Real results from real clients who bet on bold marketing.</p>
+      <h2 class="section-title">The Buzz Is <span class="amber">Real</span> &#x1F41D;</h2>
+      <p class="section-sub">Real results from real clients who trusted Digital Bee to make it happen.</p>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
-        <div class="quote-mark">"</div>
         <div class="stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-        <p class="quote">Digital B didn't just grow our social media. They built us a brand people actually talk about. Revenue up 240% in six months.</p>
+        <p class="quote">"Digital Bee completely transformed our social media presence. Our engagement tripled in just two months and we are getting leads every single day now. Best decision we made."</p>
         <div class="testimonial-author">
-          <div class="author-avatar">MR</div>
+          <div class="author-avatar">TL</div>
           <div class="author-info">
-            <h4>Marcus Reed</h4>
-            <p>CEO, Reign Realty Group</p>
+            <h4>Tanya Lewis</h4>
+            <p>Owner, Glow Beauty Bar</p>
           </div>
         </div>
       </div>
       <div class="testimonial-card reveal">
-        <div class="quote-mark">"</div>
         <div class="stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-        <p class="quote">They got us coverage in 12 outlets and sold out our venue in 3 days. No other agency understands entertainment like Digital B.</p>
+        <p class="quote">"They got my single on 8 playlists and my show sold out in 4 days. No other marketing team understands the entertainment space like Digital Bee. They just get it."</p>
         <div class="testimonial-author">
-          <div class="author-avatar">AJ</div>
+          <div class="author-avatar">MJ</div>
           <div class="author-info">
-            <h4>Ashley James</h4>
-            <p>Manager, KAI Music</p>
+            <h4>Marcus Johnson</h4>
+            <p>Independent Artist</p>
           </div>
         </div>
       </div>
       <div class="testimonial-card reveal">
-        <div class="quote-mark">"</div>
         <div class="stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-        <p class="quote">Our cost per lead dropped 60% in the first month. They don't just run ads — they engineer systems. Game changers.</p>
+        <p class="quote">"Our ad spend ROI went from barely breaking even to 4.2x return. Digital Bee does not just run ads, they build systems. Cannot recommend them enough."</p>
         <div class="testimonial-author">
-          <div class="author-avatar">DW</div>
+          <div class="author-avatar">SR</div>
           <div class="author-info">
-            <h4>Derek Williams</h4>
-            <p>Founder, NovaTech</p>
+            <h4>Sophia Reyes</h4>
+            <p>CEO, FreshPlate Meal Prep</p>
           </div>
         </div>
       </div>
@@ -1127,14 +1035,16 @@ ul { list-style: none; }
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA SECTION -->
 <section class="cta-section" id="contact">
+  <div class="honeycomb-bg"></div>
+  <div class="cta-glow"></div>
   <div class="container">
     <div class="cta-inner reveal">
-      <p class="section-label">Ready?</p>
-      <h2 class="section-title">Let's Build Something <span class="accent">Unforgettable.</span></h2>
-      <p>Tell us about your brand, your goals, and your vision. We'll show you what Digital <span style="color: var(--accent); font-weight: 700;">B</span> can do.</p>
-      <a href="questionnaire.html" class="btn-primary">Start the Questionnaire <span>&#8594;</span></a>
+      <span class="cta-bee">&#x1F41D;</span>
+      <h2 class="section-title">Ready to Get <span style="color: var(--honey);">Buzzin'?</span></h2>
+      <p>Tell us about your brand, your goals, and your vision. Fill out our quick questionnaire and let's start building something sweet together.</p>
+      <a href="questionnaire.html" class="btn-primary">Start the Questionnaire &#8594;</a>
     </div>
   </div>
 </section>
@@ -1144,43 +1054,46 @@ ul { list-style: none; }
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo">Digital <span>B</span></div>
-        <p>Bold marketing for brands that refuse to be ignored. Business. Entertainment. Everything in between.</p>
+        <div class="logo">
+          <span class="bee-icon">&#x1F41D;</span>
+          Digital <span class="brand-bee">Bee</span>
+        </div>
+        <p>We keep your business buzzin'. Marketing that creates a real buzz for businesses and entertainment brands alike.</p>
       </div>
       <div class="footer-links">
         <div class="footer-links-col">
           <h4>Navigate</h4>
           <a href="#services">Services</a>
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#why">Why Us</a>
+          <a href="#industries">Industries</a>
+          <a href="#testimonials">Reviews</a>
         </div>
         <div class="footer-links-col">
           <h4>Services</h4>
-          <a href="#services">Brand Strategy</a>
           <a href="#services">Social Media</a>
-          <a href="#services">Paid Advertising</a>
-          <a href="#services">PR & Media</a>
+          <a href="#services">Paid Ads</a>
+          <a href="#services">Brand Identity</a>
+          <a href="#services">PR &amp; Exposure</a>
         </div>
         <div class="footer-links-col">
           <h4>Connect</h4>
           <div class="footer-socials">
-            <a href="https://instagram.com/digitalbmarketing" target="_blank" aria-label="Instagram">
+            <a href="https://instagram.com/digitalbee.support" target="_blank" aria-label="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            <a href="https://tiktok.com/@digitalbmarketing" target="_blank" aria-label="TikTok">
+            <a href="https://tiktok.com/@digitalbee.support" target="_blank" aria-label="TikTok">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.19 8.19 0 0 0 4.76 1.52V6.79a4.83 4.83 0 0 1-1-.1z"/></svg>
             </a>
-            <a href="mailto:hello@digitalbmarketing.com" aria-label="Email">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="https://facebook.com/digitalbee.support" target="_blank" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
           </div>
-          <a href="mailto:hello@digitalbmarketing.com">hello@digitalbmarketing.com</a>
+          <a href="https://instagram.com/digitalbee.support" target="_blank" class="footer-handle">@digitalbee.support</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Digital <span style="color: var(--accent);">B</span> Marketing. All rights reserved.</p>
+      <p>&copy; 2026 Digital Bee Marketing. All rights reserved. &#x1F41D;</p>
     </div>
   </div>
 </footer>
@@ -1188,7 +1101,7 @@ ul { list-style: none; }
 <!-- FLOATING CTA -->
 <a href="questionnaire.html" class="floating-cta">
   <span class="pulse-dot"></span>
-  <span class="cta-text">Book a Call</span>
+  <span class="cta-text">Get Buzzin' &#x1F41D;</span>
 </a>
 
 <script>
@@ -1212,16 +1125,24 @@ function closeMenu() {
   document.body.style.overflow = '';
 }
 
-// Scroll reveal
+// Scroll reveal via IntersectionObserver
 const reveals = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+  entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      // Stagger animation for sibling cards
+      const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+      let delay = 0;
+      siblings.forEach((sib, i) => {
+        if (sib === entry.target) delay = i * 100;
+      });
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, delay);
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => revealObserver.observe(el));
 
 // Smooth scroll for anchor links

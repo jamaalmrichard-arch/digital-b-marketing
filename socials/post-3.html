@@ -3,188 +3,268 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1080">
-<title>Digital B Marketing — Post 3: Results</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Digital Bee Marketing — Post 3: Why Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   width: 1080px;
   height: 1080px;
-  font-family: 'Space Grotesk', sans-serif;
-  background: #0a0a0a;
+  font-family: 'Inter', sans-serif;
+  background: #1a1a1a;
   color: #fff;
   overflow: hidden;
   position: relative;
 }
 
-/* Gradient background */
+/* Honey gradient sweep */
 .bg-gradient {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, #0a0a0a 0%, #1a0a15 40%, #0a0a0a 60%, #0a1520 100%);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    linear-gradient(160deg, #1a1a1a 0%, #2a1f0a 35%, #1a1a1a 55%, #1a1a0f 85%, #1a1a1a 100%);
 }
 
-/* Accent line */
-.accent-line {
+/* Top accent bar */
+.top-bar {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: linear-gradient(90deg, #FF2D7B, #00D4FF);
+  top: 0; left: 0; right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, #FF8F00, #FFC107, #FF8F00);
+  z-index: 5;
 }
+
+/* Side accent stripe */
+.side-stripe {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 6px;
+  height: 960px;
+  background: linear-gradient(180deg, #FFC107 0%, #FF8F00 50%, transparent 100%);
+  border-radius: 0 3px 3px 0;
+  z-index: 5;
+}
+
+/* Decorative circles */
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(255,193,7,0.08);
+}
+.deco-circle-1 { width: 300px; height: 300px; top: -80px; right: -80px; }
+.deco-circle-2 { width: 200px; height: 200px; bottom: -60px; left: -60px; }
+.deco-circle-3 { width: 150px; height: 150px; bottom: 200px; right: -40px; border-color: rgba(255,143,0,0.06); }
 
 .content {
   position: relative;
   z-index: 2;
-  padding: 70px;
+  padding: 60px 70px 50px 80px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.top-row {
+/* Header */
+.header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 .logo {
-  font-size: 24px;
+  font-family: 'Poppins', sans-serif;
   font-weight: 800;
+  font-size: 24px;
+  color: #fff;
 }
-.logo span { color: #FF2D7B; font-size: 28px; }
-.label {
-  font-size: 12px;
-  font-weight: 700;
+.logo .bee { color: #FFC107; }
+.logo .emoji { font-size: 22px; margin-right: 6px; }
+.tag-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 5px;
-  color: #FF2D7B;
+  letter-spacing: 4px;
+  color: #FFC107;
 }
 
-.headline {
-  text-align: center;
-  margin-bottom: 50px;
-}
-.headline h1 {
-  font-size: 56px;
-  font-weight: 800;
-  line-height: 1.1;
+/* Headline section */
+.headline-section {
   margin-bottom: 16px;
 }
-.headline .gradient-text {
-  background: linear-gradient(135deg, #FF2D7B, #00D4FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.headline {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 1.1;
+  margin-bottom: 14px;
 }
-.headline p {
-  font-size: 20px;
-  color: #888;
+.headline .yellow { color: #FFC107; }
+.headline .white { color: #fff; }
+.sub-line {
+  font-family: 'Inter', sans-serif;
+  font-size: 21px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 40px;
 }
 
+/* Checklist */
 .checklist {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
+  gap: 16px;
 }
 .check-item {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 24px 32px;
+  gap: 22px;
+  background: rgba(255,193,7,0.06);
+  border: 1px solid rgba(255,193,7,0.1);
+  border-radius: 16px;
+  padding: 26px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.check-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #FFC107, #FF8F00);
+  border-radius: 0 2px 2px 0;
 }
 .check-icon {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #FF2D7B, #cc1a5e);
+  background: linear-gradient(135deg, #FFC107, #FF8F00);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
   flex-shrink: 0;
+  font-size: 24px;
+  color: #1a1a1a;
+  font-weight: 900;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 16px rgba(255,193,7,0.25);
 }
 .check-text {
+  font-family: 'Inter', sans-serif;
   font-size: 22px;
-  font-weight: 600;
-  color: #e0e0e0;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
 }
 .check-text strong {
   color: #fff;
+  font-weight: 700;
 }
 
+/* Bottom CTA */
 .bottom {
-  margin-top: 40px;
-  text-align: center;
+  margin-top: 36px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
+  padding-top: 28px;
+  border-top: 2px solid rgba(255,193,7,0.12);
 }
-.cta-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #FF2D7B, #00D4FF);
-  color: #fff;
-  padding: 20px 60px;
-  border-radius: 50px;
-  font-size: 20px;
+.cta-pill {
+  background: linear-gradient(135deg, #FFC107, #FF8F00);
+  padding: 20px 48px;
+  border-radius: 60px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.cta-pill span {
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  font-size: 22px;
+  color: #1a1a1a;
 }
-.bottom-sub {
-  font-size: 15px;
-  color: #666;
+.cta-pill .keyword {
+  background: #1a1a1a;
+  color: #FFC107;
+  padding: 3px 14px;
+  border-radius: 6px;
+}
+.bottom-right {
+  text-align: right;
+}
+.free-tag {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFC107;
+  margin-bottom: 4px;
+}
+.handle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 1px;
 }
 </style>
 </head>
 <body>
 <div class="bg-gradient"></div>
-<div class="accent-line"></div>
+<div class="top-bar"></div>
+<div class="side-stripe"></div>
+<div class="deco-circle deco-circle-1"></div>
+<div class="deco-circle deco-circle-2"></div>
+<div class="deco-circle deco-circle-3"></div>
 
 <div class="content">
-  <div class="top-row">
-    <div class="logo">Digital<span>B</span></div>
-    <div class="label">Why Us</div>
+  <div class="header-row">
+    <div class="logo"><span class="emoji">🐝</span> Digital <span class="bee">Bee</span> Marketing</div>
+    <div class="tag-label">Why Choose Us</div>
   </div>
 
-  <div class="headline">
-    <h1>Stop Posting.<br>Start <span class="gradient-text">Converting.</span></h1>
-    <p>Here's what changes when you work with Digital B:</p>
+  <div class="headline-section">
+    <div class="headline">
+      <span class="white">Stop Guessing.</span><br>
+      <span class="yellow">Start Buzzin'.</span>
+    </div>
+    <div class="sub-line">Here's what you get when the hive goes to work for you:</div>
   </div>
 
   <div class="checklist">
     <div class="check-item">
-      <div class="check-icon">✓</div>
-      <div class="check-text"><strong>Content that actually gets engagement</strong> — not just likes from friends</div>
+      <div class="check-icon">&#10003;</div>
+      <div class="check-text"><strong>A custom strategy</strong> built for your brand, your market, your goals</div>
     </div>
     <div class="check-item">
-      <div class="check-icon">✓</div>
-      <div class="check-text"><strong>Ads that bring in real leads</strong> — not vanity metrics</div>
+      <div class="check-icon">&#10003;</div>
+      <div class="check-text"><strong>Content that converts</strong> — not just likes, but leads and sales</div>
     </div>
     <div class="check-item">
-      <div class="check-icon">✓</div>
-      <div class="check-text"><strong>A brand people remember</strong> — not just another page to scroll past</div>
+      <div class="check-icon">&#10003;</div>
+      <div class="check-text"><strong>Ad campaigns that pay for themselves</strong> with real, trackable ROI</div>
     </div>
     <div class="check-item">
-      <div class="check-icon">✓</div>
-      <div class="check-text"><strong>Strategy built for YOUR industry</strong> — business or entertainment</div>
+      <div class="check-icon">&#10003;</div>
+      <div class="check-text"><strong>A dedicated team</strong> that moves fast — no waiting weeks for a post</div>
     </div>
     <div class="check-item">
-      <div class="check-icon">✓</div>
-      <div class="check-text"><strong>A team that moves fast</strong> — no waiting weeks for a single post</div>
+      <div class="check-icon">&#10003;</div>
+      <div class="check-text"><strong>Monthly reporting</strong> so you always know what's working</div>
     </div>
   </div>
 
   <div class="bottom">
-    <div class="cta-btn">DM "GROW" to Start</div>
-    <div class="bottom-sub">Free consultation • No contracts • Results first</div>
+    <div class="cta-pill">
+      <span>DM <span class="keyword">'GROW'</span> for a free strategy call</span>
+    </div>
+    <div class="bottom-right">
+      <div class="free-tag">Free consultation. No contracts.</div>
+      <div class="handle">@digitalbee.support</div>
+    </div>
   </div>
 </div>
 </body>
