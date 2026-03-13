@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Digital Bee Marketing — Slide 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: #FFFDF5;
+    position: relative;
+  }
+
+  /* Subtle honeycomb in corners */
+  .honeycomb-corner {
+    position: absolute;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%231a1a1a' stroke-width='1.5'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%231a1a1a' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-size: 56px 100px;
+    z-index: 1;
+  }
+  .hc-top-right {
+    top: -20px; right: -20px;
+    width: 320px; height: 320px;
+  }
+  .hc-bottom-left {
+    bottom: -20px; left: -20px;
+    width: 250px; height: 250px;
+  }
+
+  /* Large 01 number */
+  .big-number {
+    position: absolute;
+    top: 70px;
+    left: 80px;
+    z-index: 10;
+  }
+  .big-number-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 140px;
+    line-height: 1;
+    color: #1a1a1a;
+    letter-spacing: -5px;
+  }
+  .number-underline {
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, #FFC107, #FF8F00);
+    border-radius: 3px;
+    margin-top: -8px;
+    margin-left: 5px;
+  }
+
+  /* Headline right side */
+  .headline-area {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    width: 540px;
+    z-index: 10;
+  }
+  .hack-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #FF8F00;
+    margin-bottom: 16px;
+    padding-left: 3px;
+  }
+  .headline {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 52px;
+    line-height: 1.0;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+
+  /* Body card */
+  .body-card {
+    position: absolute;
+    top: 380px;
+    left: 80px;
+    right: 80px;
+    z-index: 10;
+    background: #fff;
+    border: 1.5px solid rgba(26,26,26,0.08);
+    border-left: 4px solid #FFC107;
+    border-radius: 4px;
+    padding: 44px 48px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.04);
+  }
+  .body-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .body-text strong {
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  .body-text .gold-highlight {
+    color: #FF8F00;
+    font-weight: 600;
+  }
+
+  /* Stats callout */
+  .stat-row {
+    display: flex;
+    gap: 50px;
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(26,26,26,0.06);
+  }
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .stat-number {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    color: #FFC107;
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 6px;
+  }
+
+  /* Floating hex decorations */
+  .hex-float {
+    position: absolute;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 2;
+  }
+  .hex-a { width: 45px; height: 45px; background: rgba(255,193,7,0.1); top: 310px; right: 100px; }
+  .hex-b { width: 30px; height: 30px; background: rgba(255,143,0,0.08); top: 280px; left: 340px; }
+  .hex-c { width: 55px; height: 55px; border: 1.5px solid rgba(255,193,7,0.12); background: transparent; bottom: 200px; right: 150px; }
+
+  /* Gold accent dots */
+  .dot { position: absolute; border-radius: 50%; z-index: 2; }
+  .dot-1 { width: 10px; height: 10px; background: #FFC107; top: 250px; right: 250px; opacity: 0.2; }
+  .dot-2 { width: 6px; height: 6px; background: #FF8F00; bottom: 250px; left: 200px; opacity: 0.15; }
+  .dot-3 { width: 8px; height: 8px; background: #FFC107; top: 340px; left: 500px; opacity: 0.18; }
+
+  /* Vertical accent line */
+  .v-line {
+    position: absolute;
+    left: 320px;
+    top: 100px;
+    width: 1px;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgba(255,193,7,0.2), transparent);
+    z-index: 2;
+  }
+
+  /* Bottom dark strip */
+  .bottom-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    background: #1a1a1a;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+  }
+  .strip-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .strip-hex {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #FFC107, #FF8F00);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+  .strip-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+  .strip-name span { color: #FFC107; }
+  .strip-handle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* Page indicator */
+  .page-indicator {
+    position: absolute;
+    top: 45px;
+    right: 80px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+  .page-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(26,26,26,0.12);
+  }
+  .page-dot.active {
+    background: #FFC107;
+    width: 24px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+  <div class="honeycomb-corner hc-top-right"></div>
+  <div class="honeycomb-corner hc-bottom-left"></div>
+
+  <!-- Floating elements -->
+  <div class="hex-float hex-a"></div>
+  <div class="hex-float hex-b"></div>
+  <div class="hex-float hex-c"></div>
+  <div class="dot dot-1"></div>
+  <div class="dot dot-2"></div>
+  <div class="dot dot-3"></div>
+  <div class="v-line"></div>
+
+  <!-- Page indicator -->
+  <div class="page-indicator">
+    <div class="page-dot"></div>
+    <div class="page-dot active"></div>
+    <div class="page-dot"></div>
+    <div class="page-dot"></div>
+  </div>
+
+  <!-- Big Number -->
+  <div class="big-number">
+    <div class="big-number-text">01</div>
+    <div class="number-underline"></div>
+  </div>
+
+  <!-- Headline -->
+  <div class="headline-area">
+    <div class="hack-label">Hack One</div>
+    <div class="headline">LEVERAGE<br>MICRO<br>INFLUENCERS</div>
+  </div>
+
+  <!-- Body Card -->
+  <div class="body-card">
+    <div class="body-text">
+      Skip the celebrities. <strong>Micro influencers</strong> (1K–50K followers) drive <span class="gold-highlight">3x more engagement</span> at 1/10th the cost. Find 5 in your niche. Send free product. Watch what happens.
+    </div>
+    <div class="stat-row">
+      <div class="stat-item">
+        <div class="stat-number">3x</div>
+        <div class="stat-label">More Engagement</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1/10</div>
+        <div class="stat-label">The Cost</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1K–50K</div>
+        <div class="stat-label">Sweet Spot</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Strip -->
+  <div class="bottom-strip">
+    <div class="strip-logo">
+      <div class="strip-hex">🐝</div>
+      <div class="strip-name">Digital <span>Bee</span></div>
+    </div>
+    <div class="strip-handle">@digitalbee.support</div>
+  </div>
+</body>
+</html>
